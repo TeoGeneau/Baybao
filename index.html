@@ -16,21 +16,30 @@
             --vert-doux: #86A488;
         }
 
-        /* Style de base */
+        /* Réinitialisation */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
             color: var(--vert-sombre);
             background: var(--gris-vert-clair);
+            overflow-x: hidden; /* Empêche les débordements horizontaux */
         }
 
-        /* Effet de la mer animée */
+        /* Section héro principale */
         .hero {
             position: relative;
-            height: 100vh;
+            width: 100%; /* Toujours 100% de la largeur disponible */
+            height: 100vh; /* 100% de la hauteur visible */
             overflow: hidden;
             text-align: center;
-            color: white; /* Texte en blanc */
+            color: white; /* Texte blanc */
         }
 
         .hero::before {
@@ -39,11 +48,11 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100%; /* Image couvre toute la section héro */
             background: url('https://images.pexels.com/photos/1139541/pexels-photo-1139541.jpeg?cs=srgb&dl=pexels-dsnsyj-1139541.jpg&fm=jpg') no-repeat center center/cover;
             animation: wave 8s infinite ease-in-out;
             z-index: -1;
-            filter: brightness(0.8);
+            filter: brightness(0.8); /* Réduit la luminosité pour plus de contraste */
         }
 
         @keyframes wave {
@@ -51,7 +60,7 @@
                 transform: translateY(0) scale(1);
             }
             50% {
-                transform: translateY(-20px) scale(1.05);
+                transform: translateY(-2%) scale(1.05); /* Léger mouvement fluide */
             }
         }
 
@@ -64,54 +73,56 @@
         }
 
         header h1 {
-            font-size: 3.5rem;
+            font-size: 5vw; /* Taille relative à la largeur de l'écran */
             font-weight: bold;
-            /*text-transform: uppercase;*/
-            color: white; /* Texte en blanc */
+            color: white; /* Texte blanc */
         }
 
         header h1 span {
-            color: var(--beige-dore); /* Couleur dorée */
+            color: var(--beige-dore); /* Couleur dorée pour certains mots */
         }
 
         header p {
-            font-size: 1.4rem;
+            font-size: 2vw; /* Taille du texte ajustable en fonction de la largeur */
             margin-top: 1rem;
-            color: white; /* Texte en blanc */
+            color: white; /* Texte blanc */
         }
 
+        /* Navigation */
         nav {
-            position: absolute;
+            position: fixed; /* Fixée en haut pour rester visible */
             top: 0;
             width: 100%;
             display: flex;
             justify-content: center;
-            padding: 1rem;
+            padding: 1rem 0;
             background: var(--gris-vert-clair);
         }
 
         nav a {
-            color: white; /* Texte en blanc */
+            color: var(--vert-sombre);
             text-decoration: none;
-            margin: 0 1.5rem;
+            margin: 0 2%;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 1.5vw; /* Taille ajustable avec la largeur */
         }
 
         nav a:hover {
             color: var(--vert-doux);
         }
 
+        /* Footer */
         footer {
-            text-align: center;
-            padding: 1.5rem;
+            position: relative;
+            width: 100%; /* Toujours 100% de la largeur */
             background: var(--gris-vert-clair2);
             color: var(--beige-dore);
-            position: relative;
+            text-align: center;
+            padding: 1rem 0;
         }
 
         footer p {
-            margin: 0;
+            font-size: 1.2vw; /* Adapté à la largeur de l'écran */
         }
     </style>
 </head>

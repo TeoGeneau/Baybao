@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bay Bao Massage - Relaxation et bien-être. Découvrez nos services de massage Tui Na, Shiatsu et autres techniques de relaxation.">
+    <title>Nos Massages - Bay Bao Massage</title>
+    <style>
+        /* Couleurs principales */
+        :root {
+            --vert-sombre: #015136;
+            --beige-dore: #CFAC6A;
+            --beige-dore-fonce: #cb993c;
+            --bleu-ocean: #3D909E;
+            --gris-vert-clair: #95AB9E;
+            --gris-vert-clair2: #e5ede9;
+            --vert-doux: #86A488;
+            --couleur-principale: #B55815;  /* Utilisé pour certains textes */
+            --couleur-principale-foncee: #18120d;
+            --couleur-secondaire: #E9E1D6;  /* Utilisé pour les fonds et certains textes */
+        }
+
+        /* Réinitialisation */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: var(--vert-sombre);
+            background: var(--gris-vert-clair);
+            overflow-x: hidden;
+        }
+
+        /* Section Héro */
+        .hero {
+            position: relative;
+            width: 100%; 
+            height: 50vh; 
+            overflow: hidden;
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/Buddah2.png') no-repeat center top;
+            background-size: cover; /* Change from 'cover' to 'contain' */
+            animation: wave 8s infinite ease-in-out;
+            z-index: -1; 
+            filter: brightness(0.8);
+        }
+
+        /* Add border to the hero header text */
+        .hero header {
+            display: inline-block; /* Ensures the border wraps tightly around the content */
+            padding: 1rem; /* Adds some spacing inside the border */
+            border: 1px solid var(--beige-dore-fonce); /* Adds the border */
+            border-radius: 10px; /* Optionally rounds the corners */
+            background-color: rgba(255, 255, 255, 0.6); /* Adds a subtle background color for better readability */
+        }
+
+
+        @keyframes wave {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-2%) scale(1.05); 
+            }
+        }
+        
+
+        header {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 4vw;
+            font-weight: bold;
+            color: white;
+        }
+
+        header h1 span {
+            color: var(--beige-dore); 
+        }
+
+        header p {
+            font-size: 2vw;
+            margin-top: 1rem;
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            background: var(--gris-vert-clair);
+            z-index: 10; 
+        }
+
+        nav a {
+            color: var(--gris-vert-clair2);
+            text-decoration: none;
+            margin: 0 2%;
+            font-weight: bold;
+            font-size: 1.5vw;
+        }
+
+        nav a:hover {
+            color: var(--vert-sombre);
+        }
+
+        /* Section Nos Massages */
+        .massages {
+            background-color: var(--gris-vert-clair2);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .massages h2 {
+            font-size: 3vw;
+            margin-bottom: 1rem;
+            color: var(--couleur-principale);
+        }
+
+        .massages p {
+            font-size: 1.5vw;
+            color: var(--couleur-principale-foncee);
+            margin-bottom: 2rem;
+        }
+
+        /* Massage Container */
+        .massage-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(800px, 1fr)); /* Utilisation d'un "minmax" pour une taille dynamique */
+            gap: 2rem; /* Réduit l'écart entre les éléments */
+            padding: 0 1rem; /* Réduit l'espace autour des éléments */
+            justify-content: center; /* Centre les éléments horizontalement */
+        }
+
+        /* Individual Massage Item */
+        .massage-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: var(--couleur-secondaire);
+            border-radius: 15px;
+            padding: 1.5rem; /* Réduit le padding pour raccourcir les containers */
+            width: 80%;  /* Limite la largeur du container à 80% */
+            max-width: 800px; /* Limite la largeur maximale */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            margin: 0 auto; /* Centre chaque item */
+        }
+
+        .massage-item:hover {
+            transform: translateY(-10px); /* Slight hover effect */
+        }
+
+        /* Massage Logo */
+        .massage-logo {
+            width: 80px;  /* Fixed width */
+            height: 80px;   /* Fixed height to ensure it's a square */
+            border-radius: 50%;  /* Make it circular */
+            overflow: hidden;  /* Hide anything outside the circle */
+            background-size: cover;  /* Ensures the background image covers the entire circle */
+            background-position: center;  /* Centers the image within the circle */
+            margin-right: 2rem;
+        }
+
+        /* Massage Information */
+        .massage-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .massage-info h3 {
+            font-size: 2.2vw;
+            color: var(--couleur-principale);
+            margin-bottom: 0.5rem;
+        }
+
+        .massage-info .time {
+            font-size: 1.2vw;
+            color: var(--vert-sombre);
+            margin-bottom: 0.5rem;
+        }
+
+        .massage-info .price {
+            font-size: 1.5vw;
+            color: var(--couleur-principale);
+            margin-bottom: 1rem;
+        }
+
+        .massage-info .description {
+            font-size: 1vw;
+            color: var(--vert-sombre);
+            line-height: 1.5;
+            font-weight: bold; /* Ajout pour mettre le texte en gras */
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            width: 100%;
+            background: var(--couleur-secondaire);
+            color: var(--beige-dore);
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer p {
+            font-size: 1.2vw;
+        }
+
+        /* Responsive Design for Small Screens */
+        @media (max-width: 768px) {
+            .massage-container {
+                grid-template-columns: 1fr; /* Un seul élément par ligne sur petits écrans */
+            }
+
+            .massages h2 {
+                font-size: 5vw;
+            }
+
+            .massage-info h3 {
+                font-size: 4vw;
+            }
+
+            .massage-info .time {
+                font-size: 3vw;
+            }
+
+            .massage-info .price {
+                font-size: 3vw;
+            }
+
+            .massage-info .description {
+                font-size: 2.5vw;
+            }
+
+            .massage-item {
+                width: 90%; /* Prend plus de place sur les petits écrans */
+                padding: 1rem; /* Réduit encore le padding pour les petits écrans */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="massages.html">Massages</a>
+        <a href="reservation.html">Réserver</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Section Héro -->
+    <section class="hero">
+        <header>
+            <h1><span>N</span>os <span>M</span>assage</h1>
+            
+        </header>
+    </section>
+
+    <!-- Section Nos Massages -->
+    <section class="massages">
+        <h2>Relaxation et Bien-être</h2>
+        <p>Découvrez nos massages et soins qui vous apportent une relaxation profonde et des bienfaits thérapeutiques. Nos techniques incluent :</p>
+
+        <div class="massage-container">
+            <!-- Tui Na Massage -->
+            <div class="massage-item">
+                <div class="massage-logo" style="background-image: url('images/massage1.png');"></div>
+                <div class="massage-info">
+                    <h3>Tui Na</h3>
+                    <p class="time">60 min</p>
+                    <p class="price">60€</p>
+                    <p class="description">Un massage traditionnel chinois pour détendre les muscles et améliorer la circulation de l'énergie. 🔄️</p>
+                </div>
+            </div>
+
+            <!-- Shiatsu Massage -->
+            <div class="massage-item">
+                <div class="massage-logo" style="background-image: url('images/massage2.png');"></div>
+                <div class="massage-info">
+                    <h3>Shiatsu</h3>
+                    <p class="time">60 min</p>
+                    <p class="price">65€</p>
+                    <p class="description">Une technique japonaise qui utilise la pression des doigts sur des points précis pour rétablir l'équilibre du corps. 💆🏻‍♂️</p>
+                </div>
+            </div>
+
+            <!-- Massage Relaxant -->
+            <div class="massage-item">
+                <div class="massage-logo" style="background-image: url('images/massage3.png');"></div>
+                <div class="massage-info">
+                    <h3>Massage Relaxant</h3>
+                    <p class="time">60 min</p>
+                    <p class="price">55€</p>
+                    <p class="description">Pour apaiser le stress et favoriser une détente profonde. 💤</p>
+                </div>
+            </div>
+
+            <!-- Massage Sportif -->
+            <div class="massage-item">
+                <div class="massage-logo" style="background-image: url('images/massage4.png');"></div>
+                <div class="massage-info">
+                    <h3>Massage Sportif</h3>
+                    <p class="time">1h20</p>
+                    <p class="price">70€</p>
+                    <p class="description">Pour soulager les tensions musculaires après une activité physique intense. 🏃🏻‍♂️</p>
+                </div>
+            </div>
+
+            <!-- Réflexologie Plantaire -->
+            <div class="massage-item">
+                <div class="massage-logo" style="background-image: url('images/massage5.png');"></div>
+                <div class="massage-info">
+                    <h3>Réflexologie Plantaire</h3>
+                    <p class="time">45 min</p>
+                    <p class="price">50€</p>
+                    <p class="description">Un soin ciblé sur les pieds pour améliorer votre santé globale. 🚑</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Bay Bao Massage - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        // Script for image carousel, parallax effect or any other dynamic interaction.
+    </script>
+</body>
+</html>

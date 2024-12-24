@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bay Bao Massage - Relaxation et bien-être. Découvrez nos services de massage Tui Na, Shiatsu et autres techniques de relaxation.">
+    <title>À propos - Bay Bao Massage</title>
+    <style>
+        /* Couleurs principales */
+        :root {
+            --vert-sombre: #015136;
+            --beige-dore: #CFAC6A;
+            --beige-dore-fonce: #cb993c;
+            --bleu-ocean: #3D909E;
+            --gris-vert-clair: #95AB9E;
+            --gris-vert-clair2: #e5ede9;
+            --vert-doux: #86A488;
+            --couleur-principale: #B55815;  /* Utilisé pour certains textes */
+            --couleur-principale-foncee: #18120d;
+            --couleur-secondaire: #E9E1D6;  /* Utilisé pour les fonds et certains textes */
+        }
+
+        /* Réinitialisation */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: var(--vert-sombre);
+            background: var(--gris-vert-clair);
+            overflow-x: hidden;
+        }
+
+        /* Section héro principale */
+        .hero {
+            position: relative;
+            width: 100%; 
+            height: 50vh; 
+            overflow: hidden;
+            text-align: center;
+            color: white;
+            z-index: 1; 
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; 
+            background: url('images/main_background.jpg') no-repeat center center/cover;
+            animation: wave 8s infinite ease-in-out;
+            z-index: -1; 
+            filter: brightness(0.8);
+        }
+
+        @keyframes wave {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-2%) scale(1.05); 
+            }
+        }
+
+        header {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 4vw;
+            font-weight: bold;
+            color: white;
+        }
+
+        header h1 span {
+            color: var(--beige-dore); 
+        }
+
+        header p {
+            font-size: 2vw;
+            margin-top: 1rem;
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            background: var(--gris-vert-clair);
+            z-index: 10; 
+        }
+
+        nav a {
+            color: var(--gris-vert-clair2);
+            text-decoration: none;
+            margin: 0 2%;
+            font-weight: bold;
+            font-size: 1.5vw;
+        }
+
+        nav a:hover {
+            color: var(--vert-sombre);
+        }
+
+        /* Section about */
+        .about {
+            display: flex;
+            padding: 3rem;
+            justify-content: space-between;
+            background-color: var(--gris-vert-clair2);
+            position: relative;
+        }
+
+        .about-text {
+            max-width: 60%;
+            padding-right: 2rem;
+        }
+
+        .about-text h2 {
+            font-size: 2.5vw;
+            margin-bottom: 1rem;
+            color: var(--vert-sombre);
+        }
+
+        .about-text p {
+            font-size: 1.2vw;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--couleur-principale-foncee);
+        }
+
+        .about-images {
+            max-width: 35%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-out; /* Ajout d'une transition douce */
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            width: 100%;
+            background: var(--couleur-secondaire);
+            color: var(--beige-dore);
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer p {
+            font-size: 1.2vw;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="massages.html">Massages</a>
+        <a href="reservation.html">Réserver</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Section Héro -->
+    <section class="hero">
+        <header>
+            <h1><span>B</span>ay <span>B</span>ao <span>M</span>assage</h1>
+            <p>Relaxation et Bien-être</p>
+        </header>
+    </section>
+
+    <!-- Section À propos -->
+    <section class="about">
+        <div class="about-text">
+            <h2>Notre Philosophie</h2>
+            <p>Chez Bay Bao Massage, nous croyons que le massage est bien plus qu'un simple soin, c'est une véritable expérience sensorielle qui nourrit l'âme et le corps. Nous vous proposons un large éventail de techniques traditionnelles de massage, incluant le Tui Na chinois, le Shiatsu japonais, ainsi que des massages plus modernes adaptés à vos besoins spécifiques.</p>
+            <p>Chaque massage est réalisé avec une attention particulière. Notre objectif est de vous offrir un moment de détente absolue, tout en favorisant votre bien-être physique et mental.</p>
+
+            <h2>Notre Expertise en Massage Sportif</h2>
+            <p>En plus de nos compétences dans les massages relaxants, on possède également une solide expérience dans le domaine du massage sportif. Ayant travaillé pendant plusieurs années avec des athlètes de haut niveau au sein du TOEC (Toulouse Olympique Espace Club). Grâce à cette expérience, on a développé une expertise particulière pour soulager les tensions musculaires et optimiser la récupération physique. Nos massages sportifs sont conçus pour prévenir les blessures, réduire la douleur et améliorer la flexibilité.</p>
+        </div>
+        <div class="about-images">
+            <img id="carousel-image" src="images/about1.jpg" alt="Massage Tui Na">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Bay Bao Massage - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = ["images/about1.jpg", "images/about2.jpg", "images/about3.jpg"];
+        const imageElement = document.getElementById("carousel-image");
+
+        function changeImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            imageElement.classList.add("fade");
+
+            setTimeout(() => {
+                imageElement.src = images[currentImageIndex];
+                imageElement.classList.remove("fade");
+            }, 500);
+        }
+
+        setInterval(changeImage, 5000);  // Change image every 3 seconds
+
+        // Parallax effect on scroll
+        const image = document.querySelector('.about-images img');
+
+        window.addEventListener('scroll', () => {
+            let offset = window.scrollY * 0.5;  // Adjust the speed of the parallax effect
+            image.style.transform = `translateY(${offset}px)`;
+        });
+    </script>
+</body>
+</html>

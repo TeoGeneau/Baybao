@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Réservez votre massage et bien-être chez Bay Bao Massage.">
+    <title>Réserver - Bay Bao Massage</title>
+    <style>
+        /* Couleurs principales */
+        :root {
+            --vert-sombre: #015136;
+            --beige-dore: #CFAC6A;
+            --beige-dore-fonce: #cb993c;
+            --bleu-ocean: #3D909E;
+            --gris-vert-clair: #95AB9E;
+            --gris-vert-clair2: #e5ede9;
+            --vert-doux: #86A488;
+            --couleur-principale: #B55815;
+            --couleur-principale-foncee: #18120d;
+            --couleur-secondaire: #E9E1D6;
+        }
+
+        /* Réinitialisation */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: var(--vert-sombre);
+            background: var(--gris-vert-clair);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            background: var(--gris-vert-clair);
+            z-index: 10;
+        }
+
+        nav a {
+            color: var(--gris-vert-clair2);
+            text-decoration: none;
+            margin: 0 2%;
+            font-weight: bold;
+            font-size: 1.5vw;
+        }
+
+        nav a:hover {
+            color: var(--vert-sombre);
+        }
+
+        /* Section Héro */
+        .hero {
+            position: relative;
+            width: 100%; 
+            height: 50vh;
+            overflow: hidden;
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        /* Add border to the hero header text */
+        .hero header {
+            display: inline-block; /* Ensures the border wraps tightly around the content */
+            padding: 1rem; /* Adds some spacing inside the border */
+            border: 1px solid var(--beige-dore-fonce); /* Adds the border */
+            border-radius: 10px; /* Optionally rounds the corners */
+            background-color: rgba(255, 255, 255, 0.6); /* Adds a subtle background color for better readability */
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/reservation.png') no-repeat center top;
+            background-size: cover;
+            animation: wave 8s infinite ease-in-out;
+            z-index: -1;
+            filter: brightness(0.8);
+        }
+
+        @keyframes wave {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-2%) scale(1.05);
+            }
+        }
+
+        header {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 4vw;
+            font-weight: bold;
+            color: white;
+        }
+
+        header h1 span {
+            color: var(--beige-dore); 
+        }
+
+        /* Section Réservation */
+        .reservation {
+            padding: 3rem;
+            background-color: var(--gris-vert-clair2);
+            text-align: center;
+        }
+
+        .reservation h2 {
+            font-size: 2.5vw;
+            color: var(--beige-dore-fonce);
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+        }
+
+        .massage-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Massage Logo */
+        .massage-logo {
+            width: 100px;  /* Increased width to better fit the circular logo */
+            height: 100px;  /* Increased height to keep it a perfect circle */
+            border-radius: 50%;  /* Make it circular */
+            overflow: hidden;  /* Hide anything outside the circle */
+            background-size: cover;  /* Ensures the background image covers the entire circle */
+            background-position: center;  /* Centers the image within the circle */
+            margin: 0 auto;  /* Centers the logo horizontally in the container */
+            margin-bottom: 1rem; /* Adds space below the heading */
+        }
+
+        /* Update the .massage-item container to center its contents */
+        .massage-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centers the content vertically */
+            align-items: center; /* Centers the content horizontally */
+            margin: 1rem;
+            width: 250px;
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .massage-info h3 {
+            font-size: 1.5rem;
+            color: var(--vert-sombre);
+        }
+
+        .massage-info p {
+            font-size: 1rem;
+            color: var(--couleur-principale-foncee);
+        }
+
+        .massage-info .price {
+            font-weight: bold;
+            color: var(--couleur-principale);
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 3rem; /* Ajout de la marge supérieure */
+            margin-bottom: 3rem; /* Ajout de la marge supérieure */
+            color: var(--beige-dore-fonce);
+            font-weight: bold;
+        }
+
+
+        .form-container input, .form-container select, .form-container textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border: 1px solid var(--gris-vert-clair);
+            margin-top: 0.2rem; /* Adds space below the heading */
+        }
+
+        .form-container h3 {
+            color: var(--vert-sombre); /* Dark green color */
+            margin-bottom: 1rem; /* Adds space below the heading */
+        }
+
+
+        .form-container input[type="submit"] {
+            background-color: var(--beige-dore);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: var(--vert-sombre);
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            width: 100%;
+            background: var(--gris-vert-clair2);
+            color: var(--beige-dore);
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer p {
+            font-size: 1.2vw;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="massages.html">Massages</a>
+        <a href="reservation.html">Réserver</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Section Héro -->
+    <section class="hero">
+        <header>
+            <h1><span>Ré</span>servez votre <span>massage</span></h1>
+        </header>
+    </section>
+
+    <!-- Section Réservation -->
+    <section class="reservation">
+        <!-- Formulaire de Réservation -->
+        <div class="form-container">
+            <h3>Formulaire de Réservation</h3>
+            <form action="submit_form.php" method="POST">
+                <label for="name">Nom Complet</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="massage">Choisissez un Massage</label>
+                <select id="massage" name="massage" required>
+                    <option value="tui_na">Tui Na</option>
+                    <option value="shiatsu">Shiatsu</option>
+                    <option value="relaxant">Massage Relaxant</option>
+                    <option value="sportif">Massage Sportif</option>
+                    <option value="reflexologie">Réflexologie Plantaire</option>
+                </select>
+
+                <label for="date">Date de Réservation</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Heure de Réservation</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="message">Commentaires supplémentaires</label>
+                <textarea id="message" name="message" rows="4" placeholder="Spécifiez vos préférences ou des demandes particulières..."></textarea>
+
+                <input type="submit" value="Réserver">
+            </form>
+        </div>
+
+        <div class="massage-container">
+            <!-- Massage Options -->
+            <div class="massage-item">
+                <div class="massage-logo" style="background-image: url('images/massage1.png');"></div>
+                <div class="massage-info">
+                    <h3>Tui Na</h3>
+                    <p class="time">60 min</p>
+                    <p class="price">60€</p>
+                    <p class="description">Un massage traditionnel chinois pour détendre les muscles et améliorer la circulation de l'énergie.</p>
+                </div>
+            </div>
+            <!-- More massage options can go here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Bay Bao Massage &copy; 2024 | Tous droits réservés</p>
+    </footer>
+</body>
+</html>

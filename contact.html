@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez Bay Bao Massage pour plus d'informations sur nos services de relaxation et bien-être.">
+    <title>Contact - Bay Bao Massage</title>
+    <style>
+        /* Couleurs principales */
+        :root {
+            --vert-sombre: #015136;
+            --beige-dore: #CFAC6A;
+            --beige-dore-fonce: #cb993c;
+            --bleu-ocean: #3D909E;
+            --gris-vert-clair: #95AB9E;
+            --gris-vert-clair2: #e5ede9;
+            --vert-doux: #86A488;
+            --couleur-principale: #B55815;  /* Utilisé pour certains textes */
+            --couleur-principale-foncee: #18120d;
+            --couleur-secondaire: #E9E1D6;  /* Utilisé pour les fonds et certains textes */
+        }
+
+        /* Réinitialisation */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: var(--vert-sombre);
+            background: var(--gris-vert-clair);
+            overflow-x: hidden;
+        }
+
+        /* Section héro principale */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            overflow: hidden;
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/main_background.jpg') no-repeat center center/cover;
+            animation: wave 8s infinite ease-in-out;
+            z-index: -1;
+            filter: brightness(0.8);
+        }
+
+        @keyframes wave {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-2%) scale(1.05);
+            }
+        }
+
+        header {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 4vw;
+            font-weight: bold;
+            color: white;
+        }
+
+        header h1 span {
+            color: var(--beige-dore);
+        }
+
+        header p {
+            font-size: 2vw;
+            margin-top: 1rem;
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            background: var(--gris-vert-clair);
+            z-index: 10;
+        }
+
+        nav a {
+            color: var(--gris-vert-clair2);
+            text-decoration: none;
+            margin: 0 2%;
+            font-weight: bold;
+            font-size: 1.5vw;
+        }
+
+        nav a:hover {
+            color: var(--vert-sombre);
+        }
+
+        /* Section Contact */
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem;
+            background-color: var(--gris-vert-clair2);
+        }
+
+        .contact h2 {
+            font-size: 2.5vw;
+            margin-bottom: 1rem;
+            color: var(--vert-sombre);
+        }
+
+        .contact p {
+            font-size: 1.2vw;
+            margin: 1rem 0;
+            color: var(--couleur-principale-foncee);
+        }
+
+        /* Contact Info Containers */
+        .contact-info-container {
+            width: 50%;
+            max-width: 400px;
+            min-width: 10%;
+            background-color: white;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-info-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info-container h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            color: var(--vert-sombre);
+        }
+
+        .contact-info-container p {
+            font-size: 1.2rem;
+            color: var(--couleur-principale-foncee);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-container a {
+            color: var(--bleu-ocean);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info-container a:hover {
+            color: var(--vert-sombre);
+        }
+
+        /* Map Styling */
+        .map-container {
+            width: 100%;
+            height: 400px;
+            margin-top: 2rem;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            width: 100%;
+            background: var(--couleur-secondaire);
+            color: var(--beige-dore);
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer p {
+            font-size: 1.2vw;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="massages.html">Massages</a>
+        <a href="reservation.html">Réserver</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Section Héro -->
+    <section class="hero">
+        <header>
+            <h1><span>B</span>ay <span>B</span>ao <span>M</span>assage</h1>
+            <p>Relaxation et Bien-être</p>
+        </header>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact">
+        <h2>Contactez-nous</h2>
+        <p>Pour toute question ou information, vous pouvez nous contacter via les moyens suivants :</p>
+
+        <!-- Email Info Container -->
+        <div class="contact-info-container">
+            <h3>Email :</h3>
+            <p><a href="mailto:baybaomassage@gmail.com">baybaomassage@gmail.com</a></p>
+        </div>
+
+        <!-- Phone Info Container -->
+        <div class="contact-info-container">
+            <h3>Téléphone :</h3>
+            <p><a href="tel:+33621107507">06 21 10 75 07</a></p>
+        </div>
+
+        <!-- Address Info Container -->
+        <div class="contact-info-container">
+            <h3>Notre Adresse :</h3>
+            <p>8 Imp. de la Garonnette, 31840 Seilh 31000 Toulouse, France</p>
+        </div>
+
+        <!-- Google Maps Embed -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.3025154686998!2d1.3642080754052954!3d43.68347385047353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aea58a12a49acf%3A0xde2c08831abdd3cc!2s8%20Imp.%20de%20la%20Garonnette%2C%2031840%20Seilh!5e0!3m2!1sfr!2sfr!4v1735001812221!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Bay Bao Massage - Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>

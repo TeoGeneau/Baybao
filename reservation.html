@@ -18,6 +18,7 @@
             --couleur-principale: #B55815;
             --couleur-principale-foncee: #18120d;
             --couleur-secondaire: #E9E1D6;
+            --vert-selection: #86A488; /* Green color for selection */
         }
 
         /* Réinitialisation */
@@ -166,8 +167,13 @@
             padding: 1rem;
             border-radius: 10px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid transparent; /* Add a transparent border to avoid layout shift */
         }
 
+        .massage-item.selected {
+            background-color: var(--vert-selection); /* Apply green background on selection */
+            border: 2px solid var(--vert-sombre); /* Apply green border on selection */
+        }
 
         .massage-info h3 {
             font-size: 1.5rem;
@@ -197,7 +203,6 @@
             font-weight: bold;
         }
 
-
         .form-container input, .form-container select, .form-container textarea {
             width: 100%;
             padding: 1rem;
@@ -211,7 +216,6 @@
             color: var(--vert-sombre); /* Dark green color */
             margin-bottom: 1rem; /* Adds space below the heading */
         }
-
 
         .form-container input[type="submit"] {
             background-color: var(--beige-dore);
@@ -295,7 +299,7 @@
 
         <div class="massage-container">
             <!-- Tui Na Massage -->
-            <div class="massage-item">
+            <div class="massage-item" id="tui_na">
                 <div class="massage-logo" style="background-image: url('images/massage1.png');"></div>
                 <div class="massage-info">
                     <h3>Tui Na</h3>
@@ -306,7 +310,7 @@
             </div>
 
             <!-- Shiatsu Massage -->
-            <div class="massage-item">
+            <div class="massage-item" id="shiatsu">
                 <div class="massage-logo" style="background-image: url('images/massage2.png');"></div>
                 <div class="massage-info">
                     <h3>Shiatsu</h3>
@@ -317,7 +321,7 @@
             </div>
 
             <!-- Massage Relaxant -->
-            <div class="massage-item">
+            <div class="massage-item" id="relaxant">
                 <div class="massage-logo" style="background-image: url('images/massage3.png');"></div>
                 <div class="massage-info">
                     <h3>Massage Relaxant</h3>
@@ -328,7 +332,7 @@
             </div>
 
             <!-- Massage Sportif -->
-            <div class="massage-item">
+            <div class="massage-item" id="sportif">
                 <div class="massage-logo" style="background-image: url('images/massage4.png');"></div>
                 <div class="massage-info">
                     <h3>Massage Sportif</h3>
@@ -339,7 +343,7 @@
             </div>
 
             <!-- Réflexologie Plantaire -->
-            <div class="massage-item">
+            <div class="massage-item" id="reflexologie">
                 <div class="massage-logo" style="background-image: url('images/massage5.png');"></div>
                 <div class="massage-info">
                     <h3>Réflexologie Plantaire</h3>
@@ -355,5 +359,23 @@
     <footer>
         <p>Bay Bao Massage &copy; 2024 | Tous droits réservés</p>
     </footer>
+
+    <script>
+        // Get form element
+        const massageSelect = document.getElementById("massage");
+        
+        // Add event listener to change background color when massage is selected
+        massageSelect.addEventListener('change', function() {
+            const massageItems = document.querySelectorAll('.massage-item');
+            massageItems.forEach(item => {
+                item.classList.remove('selected');  // Remove selection from all items
+            });
+
+            // Add 'selected' class to the chosen massage
+            const selectedMassage = massageSelect.value;
+            const selectedMassageItem = document.getElementById(selectedMassage);
+            selectedMassageItem.classList.add('selected');
+        });
+    </script>
 </body>
 </html>
